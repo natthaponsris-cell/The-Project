@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyPatrol : MonoBehaviour
 {
     [SerializeField] public int Enemyhealth = 100;
-    [SerializeField] int damage = 20;
+    [SerializeField] int damage = 40;
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
