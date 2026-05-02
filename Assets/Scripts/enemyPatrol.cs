@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class enemyPatrol : MonoBehaviour
 {
-    [SerializeField] int Enemyhealth = 100;
-    [SerializeField] int damage = 50;
+    [SerializeField] public int Enemyhealth = 100;
+    [SerializeField] int damage = 20;
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
     private Animator anim;
     private Transform currentPoint;
     public float speed;
+    
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("bullet"))
-        {
-            Enemyhealth -= damage;
-
-            if (Enemyhealth <= 0)
-            {
-                Destroy(this.gameObject, 1f);
-            }
-        }
-    }
 
     void Start()
     {
@@ -34,9 +23,24 @@ public class enemyPatrol : MonoBehaviour
         anim.SetBool("isRunning", true);
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<Movement>().Playerhealth -= damage;
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (Enemyhealth <= 0)
+        {
+            Destroy(gameObject, 1f);
+        }
+
         Vector2 point = currentPoint.position - transform.position;
 
         if (currentPoint == pointB.transform)
@@ -57,5 +61,6 @@ public class enemyPatrol : MonoBehaviour
         {
             currentPoint = pointB.transform;
         }
+        
     }
 }

@@ -6,13 +6,11 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb2d;
 
     float move;
-    [SerializeField] int Playerhealth = 100;
+    [SerializeField] public int Playerhealth = 100;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     [SerializeField] private float cooldownDuration = 2f;
     private float nextReadyTime;
-    public GameObject gameOverScreen;
-    private bool isGameOver = false;
 
     void Start()
     {
@@ -31,16 +29,5 @@ public class Movement : MonoBehaviour
             Debug.Log("Jump!");
             nextReadyTime = Time.time + cooldownDuration;
         }
-        if (Playerhealth <= 0)
-        {
-            Lose();
-        }
-    }
-    void Lose()
-    {
-        isGameOver = true;
-        Time.timeScale = 0f;
-        Debug.Log("Game Over");
-        gameOverScreen.SetActive(true);
     }
 }
