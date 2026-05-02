@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System;
 
 public class TimerBchaviro : MonoBehaviour
 {
@@ -24,5 +26,15 @@ public class TimerBchaviro : MonoBehaviour
         // 3. แสดงผลในรูปแบบ 00:00
         // {0:00} หมายถึงตัวแปรลำดับที่ 0 ให้แสดงเลข 2 หลักเสมอ (เติมเลข 0 ข้างหน้าถ้าไม่ถึง)
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        if (elapsedTime < 0)
+        {
+            LoadScene();
+        }
+
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("Scene2");
     }
 }
