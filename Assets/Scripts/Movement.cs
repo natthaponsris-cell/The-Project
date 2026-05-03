@@ -1,5 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class Movement : MonoBehaviour
     [SerializeField] public int Playerhealth = 100;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
-    [SerializeField] private float cooldownDuration = 2f;
+    [SerializeField] private float jumpcooldown = 1.5f;
     private float nextReadyTime;
 
     void Start()
@@ -27,13 +29,16 @@ public class Movement : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(rb2d.linearVelocity.x, jumpForce));
             Debug.Log("Jump!");
-            nextReadyTime = Time.time + cooldownDuration;
+            nextReadyTime = Time.time + jumpcooldown;
         }
 
         if (Playerhealth > 100)
         {
             Playerhealth = 100;
         }
-;
+        if (Playerhealth <= 0)
+        {
+            Time.timeScale = 0f;
+        }
     }
 }

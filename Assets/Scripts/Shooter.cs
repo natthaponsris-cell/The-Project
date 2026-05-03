@@ -23,8 +23,6 @@ public class Shooter : MonoBehaviour
             {
                 // 1. สั่งให้เป้าขยับไปจุดที่คลิก (อันนี้ทำได้แล้ว)
                 target.transform.position = new Vector2(hit.point.x, hit.point.y);
-                Debug.Log("hit " + hit.collider.name);
-
                 // 2. สั่งยิงกระสุนออกมา (เพิ่มส่วนนี้เข้าไปครับ!)
                 FireProjectile();
                 nextReadyTime = Time.time + cooldownDuration;
