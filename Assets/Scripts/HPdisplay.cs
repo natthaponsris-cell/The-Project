@@ -16,8 +16,8 @@ public class HPdisplay : MonoBehaviour
 
     private void Start()
     {
-        //deathScreen.SetActive(false);
-        //restartb.SetActive(false);
+        deathScreen.SetActive(false);
+        restartb.SetActive(false);
     }
 
     void Update()

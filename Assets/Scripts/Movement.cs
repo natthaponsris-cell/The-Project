@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

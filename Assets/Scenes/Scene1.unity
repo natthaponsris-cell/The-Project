@@ -587,7 +587,7 @@ MonoBehaviour:
   movement: {fileID: 1400721501}
   hpImage: {fileID: 1860932472}
   deathScreen: {fileID: 1480575880}
-  restartb: {fileID: 0}
+  restartb: {fileID: 2015794896}
   hp100: {fileID: -1190798506109224666, guid: c04050d1fedf94046b1361a50f8279e4, type: 3}
   hp60: {fileID: 797504414337228051, guid: 150106beb55213d44bb63595c2de7b1b, type: 3}
   hp20: {fileID: -2875438131073514505, guid: 201482f425acfea4885e493ecb160e1c, type: 3}
