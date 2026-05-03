@@ -6,20 +6,9 @@ using System;
 public class Timerwin : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    public GameObject btmenu;
-    public GameObject winsc;
 
     public float elapsedTime = 1800;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        btmenu.SetActive(false);
-        winsc.SetActive(false);
-    }
-
-    // Update is called once per frame
     void Update()
     {
         elapsedTime -= Time.deltaTime;
@@ -34,9 +23,7 @@ public class Timerwin : MonoBehaviour
 
         if (elapsedTime < 0)
         {
-            Time.timeScale = 0f;
-            btmenu.SetActive(true);
-            winsc?.SetActive(true);
+            SceneManager.LoadScene("EndCredit");
         }
 
     }
