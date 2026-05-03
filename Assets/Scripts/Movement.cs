@@ -29,5 +29,11 @@ public class Movement : MonoBehaviour
             Debug.Log("Jump!");
             nextReadyTime = Time.time + cooldownDuration;
         }
+
+        if (Playerhealth > 100)
+        {
+            Playerhealth = 100;
+        }
+;
     }
 }

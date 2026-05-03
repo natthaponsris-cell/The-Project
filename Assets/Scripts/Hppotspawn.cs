@@ -1,13 +1,13 @@
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class WaveSpawner : MonoBehaviour
+public class Hppotspawn : MonoBehaviour
 {
     public float spawnRate = 10.0f;
-    public float timeBetweenWaves = 20.0f;
-    public int enemyCount = 1; // กำหนดค่าเริ่มต้นไว้หน่อยก็ดีครับ
-    public GameObject enemy;
+    public float timeBetweenWaves = 30.0f;
+    public int pot = 1;
+    public GameObject hppot;
 
     bool waveIsDone = true;
 
@@ -23,9 +23,9 @@ public class WaveSpawner : MonoBehaviour
     {
         waveIsDone = false; // ล็อคไว้ไม่ให้ Update เรียกซ้ำ
 
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < pot; i++)
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
+            Instantiate(hppot, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(spawnRate);
         }
 
@@ -34,7 +34,7 @@ public class WaveSpawner : MonoBehaviour
         {
             spawnRate -= 0.1f;
         }
-        enemyCount += 1;
+        pot += 0;
 
         // รอเวลาพักระหว่าง Wave
         yield return new WaitForSeconds(timeBetweenWaves);

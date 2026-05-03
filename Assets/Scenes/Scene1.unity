@@ -1199,6 +1199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerBchaviro
   timerText: {fileID: 152937587}
+  elapsedTime: 120
 --- !u!1 &548995866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2202618095543631470, guid: 3ffae77418f68f349a6dd1483b768feb, type: 3}
@@ -1362,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 707133791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.93, y: 92, z: 0}
+  m_LocalPosition: {x: -2.16, y: -2.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2329,6 +2330,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1fde62065f7944d96f4fd1028404c3, type: 3}
+--- !u!1 &1644577102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1644577104}
+  - component: {fileID: 1644577103}
+  m_Layer: 0
+  m_Name: hppotspawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1644577103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644577102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cffde9be4123c34eb3368d84de2bf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hppotspawn
+  spawnRate: 10
+  timeBetweenWaves: 30
+  pot: 1
+  hppot: {fileID: 7613800916297295487, guid: 736ad08a42ff16946a91fa802dd89e4d, type: 3}
+--- !u!4 &1644577104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644577102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.8, y: -2.69, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686015282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,3 +2800,4 @@ SceneRoots:
   - {fileID: 705166108}
   - {fileID: 825975108}
   - {fileID: 1686015283}
+  - {fileID: 1644577104}

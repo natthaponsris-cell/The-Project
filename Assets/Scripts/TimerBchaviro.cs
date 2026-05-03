@@ -6,7 +6,7 @@ using System;
 public class TimerBchaviro : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    float elapsedTime = 120;
+    public float elapsedTime = 120;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
