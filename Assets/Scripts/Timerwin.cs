@@ -7,6 +7,7 @@ public class Timerwin : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     public GameObject btmenu;
+    public GameObject winsc;
 
     public float elapsedTime = 1800;
 
@@ -15,6 +16,7 @@ public class Timerwin : MonoBehaviour
     void Start()
     {
         btmenu.SetActive(false);
+        winsc.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class Timerwin : MonoBehaviour
         {
             Time.timeScale = 0f;
             btmenu.SetActive(true);
+            winsc?.SetActive(true);
         }
 
     }
